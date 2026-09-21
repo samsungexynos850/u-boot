@@ -13,8 +13,8 @@
 #include <errno.h>
 #include "font.h"
 
-#define SCREEN_WIDTH 1080
-#define SCREEN_HEIGHT 2400
+#define SCREEN_WIDTH 720
+#define SCREEN_HEIGHT 1600
 
 DECLARE_GLOBAL_DATA_PTR;
 

@@ -2,7 +2,7 @@ if ARCH_EXYNOS
 
 config BOARD_COMMON
 	def_bool y
-	depends on !TARGET_SMDKV310 && !TARGET_ARNDALE && !TARGET_EXYNOS_MOBILE && !TARGET_E850_96
+	depends on !TARGET_SMDKV310 && !TARGET_ARNDALE && !TARGET_EXYNOS_MOBILE && !TARGET_E850_96 && !TARGET_A217F
 
 config SPI_BOOTING
 	bool
@@ -238,6 +238,17 @@ if ARCH_EXYNOS9
 choice
 	prompt "EXYNOS9 board select"
 
+config TARGET_A217F
+	bool "Samsung SM-A217F board"
+	select ARM64
+	select CLK_EXYNOS
+	select OF_CONTROL
+	select PINCTRL
+	select PINCTRL_EXYNOS850
+	imply OF_UPSTREAM
+	imply DM_RNG
+	imply RNG_EXYNOS
+
 config TARGET_E850_96
 	bool "WinLink E850-96 board"
 	select ARM64
@@ -285,6 +296,7 @@ source "board/samsung/smdk5420/Kconfig"
 source "board/samsung/espresso7420/Kconfig"
 source "board/samsung/axy17lte/Kconfig"
 source "board/samsung/e850-96/Kconfig"
+source "board/samsung/a217f/Kconfig"
 source "board/samsung/exynos-mobile/Kconfig"
 
 endif

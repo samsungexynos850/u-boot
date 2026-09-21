@@ -1,0 +1,16 @@
+if TARGET_A217F
+
+config EXYNOS850
+	bool "Exynos850 SoC support"
+	default y
+
+config SYS_BOARD
+	default "a217f"
+
+config SYS_VENDOR
+	default "samsung"
+
+config SYS_CONFIG_NAME
+	default "a217f"
+
+endif
